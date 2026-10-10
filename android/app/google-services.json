@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "622411529084",
+    "project_id": "astolamart-1deb7",
+    "storage_bucket": "astolamart-1deb7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622411529084:android:68123042ed18ae243182f9",
+        "android_client_info": {
+          "package_name": "com.astolamart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFuilixWVXCHRMHlX6xVVTQfLravuiwNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

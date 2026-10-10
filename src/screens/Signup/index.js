@@ -12,6 +12,7 @@ import {
     ActivityIndicator,
     StatusBar,
     Image,
+    Linking,
 } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import LinearGradient from 'react-native-linear-gradient'
@@ -141,39 +142,6 @@ const Signup = ({ navigation }) => {
                             </View>
                         </View>
 
-                        {/* Confirm Password Input */}
-                        {/* <View style={styles.inputContainer}>
-              <Text style={styles.inputLabel}>Confirm Password</Text>
-              <View
-                style={[
-                  styles.inputWrapper,
-                  focusedField === 'confirmPassword' && styles.inputWrapperFocused,
-                ]}
-              >
-                <Icon name="checkmark-circle-outline" size={20} color="#6B7280" style={styles.inputIcon} />
-                <TextInput
-                  style={styles.input}
-                  placeholder="Confirm your password"
-                  placeholderTextColor="#9CA3AF"
-                  value={confirmPassword}
-                  onChangeText={setConfirmPassword}
-                  onFocus={() => setFocusedField('confirmPassword')}
-                  onBlur={() => setFocusedField(null)}
-                  secureTextEntry={!showConfirmPassword}
-                />
-                <TouchableOpacity 
-                  onPress={() => setShowConfirmPassword(!showConfirmPassword)}
-                  hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-                >
-                  <Icon
-                    name={showConfirmPassword ? 'eye-outline' : 'eye-off-outline'}
-                    size={20}
-                    color="#6B7280"
-                  />
-                </TouchableOpacity>
-              </View>
-            </View> */}
-
                         {/* Terms and Conditions */}
                         <TouchableOpacity
                             style={styles.termsContainer}
@@ -186,7 +154,17 @@ const Signup = ({ navigation }) => {
                                 )}
                             </View>
                             <Text style={styles.termsText}>
-                                I agree to the <Text style={styles.termsLink}>Terms of Service</Text> and <Text style={styles.termsLink}>Privacy Policy</Text>
+                                I agree to the <Text style={styles.termsLink}>Terms of Service</Text> and{' '}
+                                <Text
+                                    style={styles.termsLink}
+                                    onPress={() => {
+                                        Linking.openURL('https://www.termsfeed.com/live/a1f89d32-e186-449b-9dee-44e2c5c1738f').catch(err =>
+                                            console.error('Error opening Privacy Policy URL:', err)
+                                        )
+                                    }}
+                                >
+                                    Privacy Policy
+                                </Text>
                             </Text>
                         </TouchableOpacity>
 
@@ -210,25 +188,6 @@ const Signup = ({ navigation }) => {
                                 )}
                             </LinearGradient>
                         </TouchableOpacity>
-
-                        {/* Divider */}
-                        {/* <View style={styles.dividerRow}>
-              <View style={styles.dividerLine} />
-              <Text style={styles.dividerText}>or continue with</Text>
-              <View style={styles.dividerLine} />
-            </View> */}
-
-                        {/* Social Buttons */}
-                        {/* <View style={styles.socialRow}>
-              <TouchableOpacity style={styles.socialButton} activeOpacity={0.7}>
-                <Icon name="logo-google" size={22} color="#EA4335" />
-                <Text style={styles.socialText}>Google</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.socialButton} activeOpacity={0.7}>
-                <Icon name="logo-apple" size={22} color="#000000" />
-                <Text style={styles.socialText}>Apple</Text>
-              </TouchableOpacity>
-            </View> */}
                     </View>
 
                     {/* Footer */}

@@ -3,9 +3,11 @@ import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import userState from './User';
+import shopState from './Shop';
 
 const reducers = combineReducers({
     userState,
+    shopState
 });
 
 const persistConfig = {
